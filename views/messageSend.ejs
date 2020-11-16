@@ -1,0 +1,114 @@
+<%- include('headfoot/header.ejs') %>
+<div class="alert alert-danger js-errorOf-notFollowing" role="alert" style="display: none; text-align: center;">
+    
+  </div>
+<div class="alert alert-warning js-errorOf-offline" role="alert" style="display: none; text-align: center;">
+    
+  </div>
+
+<section class="d-flex justify-content-center flex-wrap " >
+    
+    <aside class="msgPartOne mt-1"  id="msgPartOne-For-MessageSend">
+        <div class="msgPartTop" >
+            <div class="d-flex justify-content-start mt-3 ml-2" >
+                <i class="ion-email"></i>
+                <strong class="msgPartTopHeading ml-2">All Message</strong>
+
+            </div>
+        </div>
+
+        <div class="msgPartBottom">
+            
+            <div class="container" style="height: 78vh;">
+            <%activeUser.friends.forEach((friend)=>{%>
+
+                    <%if(`${activeUser._id}`!==`${friend._id}`){%>
+                    <div class="row">
+
+                        
+                        <a href="/home/message/<%=friend._id%>" class="messageCard" >
+                            <div class="mt-2">
+
+                                <%if(friend.profilePhoto==''){%>
+                                    
+                                    <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="" class="messageUserpic">
+                                 <%}else{%>
+                                        
+                                    <img src="/upload/profile/<%=friend._id%>/<%=friend.profilePhoto%>" alt="" class="messageUserpic">
+
+                                <%}%>
+
+
+
+
+                                <strong class="ml-1 messageUserName userName-js" id="messageUserName"><%=friend.name%></strong>
+
+                            </div>
+                        </a>
+                    </div>
+
+                    <%}%>
+            <%})%>
+
+            </div>
+
+        </div>
+
+
+    </aside>
+
+
+    <aside class="msgPartTwo mt-1" id="msgPartTwo-For-MessageSend">
+        
+        <div class="msgSendPartTwoTop d-flex align-items-center">
+        <!-- <div class="msgPartTwoTop"> -->
+            <h6 class="heading-of-msgSendPartTwoTop ml-3 aUserFormsgSend" id="<%=activeUser._id%>" ><%=seletedUser.name%></h6>
+            
+        </div>
+        <div class="msgSendPartTwoBottom d-flex flex-wrap" >
+
+            
+
+            <div class="totalMsgShowpart totalMsgShowpart-js" style="overflow: auto;">
+               
+                <!-- ekhane theke loop start hobe -->
+                
+
+                <%seletedUser.totalMsg.forEach((eachUserMsgDetails)=>{%>
+
+                       <%if(`${eachUserMsgDetails._id}`==`${activeUser._id}`){%>
+                            <%eachUserMsgDetails.msg.forEach((eachMsg)=>{%>
+                            
+                                
+                               <%if(`${eachMsg.authorId}`==`${activeUser._id}`){%>
+                                    <p class="forOwnUserDiv"><%=eachMsg.text%></p>
+                                <%}else{%>
+                                    <p class="forAnotherUserDiv"><%=eachMsg.text%></p>
+                                   <%}%> 
+                            <%})%>
+                       <%}%> 
+
+                <%})%>
+                
+            </div>
+
+            <div class="writtenMsgSendPart d-flex justify-content-around align-items-center">
+               
+                <textarea name="sendmsg" id="idForMessageInput" cols="30" rows="10" class=" messageInput msgInput-js" placeholder="Messaging"></textarea>
+
+               <button  class="d-block messageSendBtn messageSendBtn-js" ><i class="ion-android-send"></i></button>
+            </div>
+            
+        </div>
+
+    </aside>
+
+
+</section>
+
+
+
+
+
+
+<%- include('headfoot/footer.ejs') %>

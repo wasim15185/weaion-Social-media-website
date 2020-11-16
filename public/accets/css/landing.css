@@ -1,0 +1,112 @@
+/* #45D543 */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.Ownrow {
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+html,
+body {
+	background-color: #fff;
+	color: #555;
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	font-weight: 300;
+	text-rendering: optimizeLegibility;
+	overflow-x: hidden;
+	
+	/* background: #45d543; */
+	/* background: linear-gradient(to right, #3fd13cfa, #69e473); */
+	/* background: linear-gradient(to right, #45d543 40%, #78f35c); */
+}
+/* #43d141 */
+/* #3fd13cfa,#69e473 */ /*imp
+/* for Logo */
+
+.logo {
+	height: 50px;
+	width: auto;
+	float: left;
+	margin-top: 30px;
+
+	border-radius: 50px;
+	margin-left: -6px;
+}
+
+header {
+	height: 100vh;
+}
+
+.image {
+	background-size: cover;
+	background-position: center;
+	height: 80.5vh;
+	width: 100%;
+
+	background-attachment: fixed;
+}
+
+nav {
+	background-color: #ffffff;
+}
+
+.main-nav {
+	float: right;
+	list-style: none;
+	margin-top: 30px;
+	padding-left: 0rem;
+}
+
+.main-nav li {
+	color: rgb(255, 251, 251);
+	display: inline-block;
+	/* margin-left: 15px; */
+	font-size: 85%;
+	cursor: pointer;
+	text-transform: capitalize;
+	font-weight: 400;
+	width: 80px;
+	height: 30px;
+	text-align: center;
+	border-bottom: 0px;
+	transition: border-bottom .2s;
+}
+.main-nav li:hover {
+	border-bottom: 1px solid #57b846;
+}
+
+.main-nav li a {
+	color: #57b846;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	font-size: 88%;
+	/* text-decoration: none; */
+}
+/* .main-nav li a:hover {
+	
+} */
+
+a:-webkit-any-link {
+	color: -webkit-link;
+	cursor: pointer;
+	text-decoration: none;
+}
+footer {
+	height: 70px;
+	width: 100%;
+	background-color: #f7f7f7;
+}
+
+p {
+	height: 30px;
+	text-align: center;
+	/* vertical-align: middle; */
+	line-height: 65px;
+	font-size: 85%;
+}

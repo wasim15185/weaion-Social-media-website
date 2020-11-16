@@ -1,0 +1,92 @@
+.msgPartOne,
+.msgPartTwo {
+	/* border: 1px solid red; */
+	height: 90vh;
+	background-color: #424242;
+	color: #fff;
+}
+/* start msg part-1*/
+.msgPartOne {
+	width: 20%;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	margin-left: 2px;
+}
+
+/*inside msgPartOne*/
+.msgPartBottom,
+.msgPartTop {
+	width: 100%;
+}
+/*message partOne head part*/
+.msgPartTop {
+	height: 10%;
+	/* border: 1px solid red; */
+	font-size: 90%;
+}
+/*message partOne heading part*/
+.msgPartTopHeading {
+	display: block;
+}
+/*message icon*/
+.ion-email {
+	display: block;
+}
+/*message partOne bottom part*/
+.msgPartBottom {
+	height: 70%;
+}
+
+/*message card*/
+.messageCard {
+	display: block;
+	height: 80px;
+	text-decoration: none;
+	color: #f1f1f1;
+	border-bottom: 1px solid #666666;
+}
+.messageCard:hover {
+	color: #cccccc;
+}
+/*message user profile pic*/
+.messageUserpic {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	/* border: 2px solid #fff; */
+}
+.messageUserName {
+	font-size: 80%;
+	border-bottom: none;
+	transition: font-size .31s;
+}
+.messageUserName:hover {
+	font-size: 85%;
+}
+
+/*start message part-2*/
+.msgPartTwo {
+	width: 50%;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-left: 1px solid #666666;
+}
+
+.msgPartTwoTop {
+	/* border: 1px solid red; */
+	height: 70px;
+	background-color: #2b2b2b;
+}
+
+.msgPartTwoBottom {
+	height: 577px;
+	/* height: 577px; */
+
+	/* background-color: red; */
+}
+
+.msgPartTwoBottomImg {
+	width: 99.9%;
+	height: 100.3%;
+	border-bottom-right-radius: 2.3px;
+}

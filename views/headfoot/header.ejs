@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weaion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/header/header.css">
+    <link rel="stylesheet" href="/accets/css/media.css">
+    <link rel="stylesheet" href="/accets/css/home.css">
+    <link rel="stylesheet" href="/accets/css/friends.css">
+    <link rel="stylesheet" href="/accets/css/message.css">
+    <link rel="stylesheet" href="/accets/css/cssForJs.css">
+    <link rel="stylesheet" href="/accets/css/messageSend.css">
+    <link rel="stylesheet" href="/accets/css/friendsList.css">
+    <link rel="stylesheet" href="/accets/css/profile.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="/ionicons-2.0.1/css/ionicons.min.css">
+    <!-- for js -->
+    <script src="/accets/lib/js/axios.min.js" ></script>
+    <script src="/accets/lib/js/socket.io.min.js" ></script>
+</head>
+<body>
+    <header>
+      <nav class="forNav">
+        <div class="navigation-row d-flex justify-content-between">
+              <img src="/header/logo/w-wide.png" alt="weaion-logo" srcset="" class="logo">
+
+              <!-- <div class="search-box d-none d-xl-block d-xxl-block d-xxl-none">
+                <input type="text" body="" name="" placeholder="Weaion-Search" class="input">
+                <a href="#" class="custom-btn"><i class="ion-search"></i></a>
+              </div> -->
+             <div class="tNavItem-div" >
+
+              
+                  <ul class="main-nav d-flex">
+                    <li class="mainNav-home-js"><a href="/home"><i class="ion-android-home common-For-msg-js"></i></a></li>
+                    <li class="mainNav-message-js"><a href="/home/message"><i class="ion-chatbubble-working "></i></a></li>
+                    <li class="mainNav-friends-js"><a href="/home/friends"><i class="ion-person-stalker "></i></a></li>
+                    <li class="mainNav-noti-js"><a href="#"><i class="ion-android-notifications common-For-msg-js"></i></a></li>
+
+                  </ul>
+
+                  <!-- <ul class="profile-nav d-flex justify-content-between my-auto"  >
+                    <li><a href="#"> <i class="ion-ios-person" style="font-size: 110%; "></i></a></li>
+                    <li> <a href="/signout"><i class="ion-log-out" style="font-size: 100%; color: red;"></i></a></li>
+                  </ul> -->
+                  <!-- <div class="my-auto d-flex flex-row-reverse" style="width: 20%; height: 80%; border: 1px solid forestgreen;"> -->
+                    <button type="button" class="btn " data-toggle="dropdown" aria-expanded="false" id="for-dropdown-toggle">
+                     <i class="ion-navicon-round"></i>  
+                    </button>
+                    <ul class="dropdown-menu " style="font-size: 75%; font-weight: 500;">
+                    
+                      <li><a class="dropdown-item" href="/home/profile/<%=currentUser._id%>" style="text-transform: uppercase;letter-spacing: .7px;"> <i class="ion-ios-person-outline" style="font-size: 115%; color: rgb(0, 255, 0); "></i> <%=currentUser.name%></a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" style="letter-spacing: .9px" href="/signout"><i class="ion-power"></i>  LOG OUT</a></li>
+
+                    </ul>
+
+                    <span class="aUserFormsgSend11" id="<%=currentUser._id%>" style="display: none;"></span>
+
+                  <!-- </div> -->
+                  
+              </div>
+        </div>
+
+      </nav>
+    </header>
+    

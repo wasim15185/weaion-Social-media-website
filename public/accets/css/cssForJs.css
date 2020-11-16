@@ -1,0 +1,38 @@
+.forAnotherUserDiv,
+.forOwnUserDiv {
+	margin-top: 15px;
+	padding: 5px 10px 5px 15px;
+	width: 60%;
+	font-size: 72%;
+	display: block;
+}
+
+.forAnotherUserDiv {
+	float: left;
+	margin-left: 11px;
+
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	background-color: rgba(39, 170, 225, 0.1);
+	color: #f1f1f1;
+}
+
+/* text-align: left; */
+
+.forOwnUserDiv {
+	float: right;
+	margin-right: 11px;
+	text-align: left;
+	direction: ltr;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	background-color: rgb(1, 118, 252);
+	color: #f1f1f1;
+}
+
+.totalMsgShowpart > li {
+	display: block;
+	width: 100%;
+}

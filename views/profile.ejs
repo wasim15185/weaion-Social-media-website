@@ -1,0 +1,473 @@
+<%- include('headfoot/header.ejs') %>
+
+
+<!-- this is error msg part -->
+<%if(message.length>0){%>
+<div class="alert alert-danger alert-dismissible fade show mb-0" role="alert" style="height: 80%; font-size: 80%;">
+  <%=message[0]%>
+  <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close" style="outline: none;border: none;background-color: inherit;">
+    <i class="ion-close"></i>
+  </button>
+</div>
+
+<%}%>
+<!-- END OF Error msg part -->
+
+
+<div class="upparPartOfProfile" id="upparPartOfProfile" style="background-color: #f5f5f5; ">
+
+   
+<aside >
+
+    <!-- for coverphoto -->
+    <%if(profileUserDetail.coverPhoto==""){%>
+      <img class="coverphoto" src="/coverdef.jpg" alt="" >
+
+    <%}else{%>
+      <img class="coverphoto" src="/upload/cover/<%=profileUserDetail._id%>/<%=profileUserDetail.coverPhoto%>" alt="" >
+      
+    <%}%>
+      <!-- end of coverPhoto -->
+
+
+    <!-- <img class="coverphoto" src="https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt=""> -->
+    <% if(`"${currentUser._id}"`==`"${proFileUserId}"`){ %>
+        <button class="btn btn-sm btn-danger btn-coverPhoto"  data-toggle="modal" data-target="#exampleModalForCoverPhoto"  ><i class="ion-camera"></i></button>
+        <%}%>
+    <!-- eta ekdom thik a6e -->
+    <aside class="propicSelect-js profilePic d-flex justify-content-center align-items-center" id="profilePic">
+
+      <!-- showing of profile photo -->
+
+
+      
+      <%if(profileUserDetail.profilePhoto==""){%>
+        <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="">
+
+      <%}else{%>
+        <img src="/upload/profile/<%=profileUserDetail._id%>/<%=profileUserDetail.profilePhoto%>" alt="">
+
+      <%}%>
+        <% if(`"${currentUser._id}"`==`"${proFileUserId}"`){ %>
+       <div style="position: absolute; text-align: center; display: none; cursor: pointer; background: rgba(0, 0, 0,0.5); width: 30%;" class="cameraIconDiv" data-toggle="modal" data-target="#exampleModal" >
+        <i class="ion-ios-camera-outline" style="color: rgb(255, 0, 0); font-size: 140%; z-index: 1"></i> 
+        <!-- <a href="#" style=" font-size:30% ;width: 80%;" class="d-block btn btn-success">upload</a> -->
+        <!-- <a href="#">update photo</a> -->
+        </div> 
+        <%}%>
+
+
+    </aside>
+
+</aside>
+<!-- 1. Modal for profile pic -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <!-- form -->
+      <form action="/home/profile/<%=profileUserDetail._id%>/profilePhoto" class="modal-content" method="POST" enctype="multipart/form-data">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"> Change Profile Picture</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" style="outline: none;border: none;background-color: inherit;">
+              <i class="ion-close"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label for="123qwe"><i class="ion-image"></i> </label>  
+                <input type="file" id="123qwe" name="profilePic" >
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-danger btn-sm">Upload</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<!-- end of profilepic modal end -->
+
+ <!-- 2.start of COVERPHOTO Modal -->
+
+ <div class="modal fade" id="exampleModalForCoverPhoto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form action="/home/profile/<%=profileUserDetail._id%>/coverPhoto" method="POST" class="modal-content" enctype="multipart/form-data">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Change Cover Picture</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" style="outline: none;border: none;background-color: inherit;">
+              <i class="ion-close"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label for="123qwe"><i class="ion-image"></i> </label>  
+                <input type="file" id="123qwe" name="coverPic" >
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-danger btn-sm">Upload</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+ <!-- end of COVERPHOTO Modal -->
+
+
+
+
+
+
+<form action="#" class=" upload-Area-profilepic " style="display: none;">
+    
+    <i class="ion-ios-camera-outline" style="color: red;"></i>
+    <button type="submit"></button>
+</form>
+
+
+
+<div class="menu-profile d-flex justify-content-center" id="menu-profile">
+    <ul class="d-flex justify-content-between">
+        <li class="menu-profile-li menu-profileName" id="menu-profileName"> <%=profileUserDetail.name%></li>
+        <li class="menu-profile-li menu-profile-others">
+            <div class="d-flex justify-content-evenly" style="height: 100%;">
+                <a href="#" class="areaOf-nav_item my-auto">Photos</a>
+                <a href="#" class="areaOf-nav_item my-auto">about</a>
+                <a href="#" class="areaOf-nav_item my-auto">more</a>
+            </div>
+            
+        </li>
+    </ul>
+
+</div>
+        
+
+
+</div>
+
+<div class="lowarPartOfProfile " style="background-color: #f5f5f5;">
+
+    <div class="container" >
+        <div class="row ">
+            
+            <div class="col-md-12 ">
+                <div class="row">
+                
+                <div class="col-md-3 mt-2 customColForLeft" id="customColForLeft">
+                    <div class="imgCardDiv" id="imgCardDiv">
+                            <h6 class="mt-1" style=" text-align: center; font-size: 70%; text-transform:uppercase;letter-spacing: 1px;">photos
+                                <hr size="3" class="my-0 mx-auto" style="width: 25%;background-color: rgb(26, 26, 26);">
+                            </h6>
+                        
+                            <div class="allContainerImg p-1" id="allContainerImg">
+                                <div> <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="" class="photoImg"></div>
+                                <div> <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="" class="photoImg"></div>
+                                <div> <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="" class="photoImg"></div>
+                                <div> <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="" class="photoImg"></div>
+                                <div> <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="" class="photoImg"></div>
+                                <div> <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="" class="photoImg"></div>
+                                <div> <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="" class="photoImg"></div>
+                                <div> <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="" class="photoImg"></div>
+                               
+                                
+                        
+                            </div>
+      
+
+                    </div>
+
+                    <div class="mt-2 profile-Ad d-none d-xl-block">
+                        <div class="profile-Ad-head">
+                            <h5>sponcer</h5>
+                            <hr size="3" class="my-0 mx-auto" style="width: 35%;background-color: rgb(26, 26, 26);">
+
+                        </div>
+
+                        <div class="profile-Ad-body mx-auto" style="width: 95%;">
+                            <img src="https://image.freepik.com/free-vector/special-offer-big-sale-background_1361-2651.jpg" alt="">
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-md-9 " style="height: 100%; ">
+                    
+                    <div class="row mt-1" style="height: 100%;">
+                        <!-- form e media query lagate hbe -->
+                        <%if(`${currentUser._id}`==`${proFileUserId}`){%>
+                        <form action="/home" method="POST" enctype="multipart/form-data" class="col-11 mx-auto formOfProfile" id="formOfProfile" style="height: 230;  background-color: #505050; width: 99%; " >
+                            <div class="img-of-user-in-postbox" id="img-of-user-in-postbox"> 
+                              <%if(currentUser.profilePhoto==""){%>
+                                <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="">
+                        
+                              <%}else{%>
+                                <img src="/upload/profile/<%=profileUserDetail._id%>/<%=profileUserDetail.profilePhoto%>" alt="" style="background-size: cover;background-repeat: no-repeat;background-position: center">
+                        
+                              <%}%>
+
+                            </div>
+                                <main  class="d-flex flex-column justify-content-center main-of-profile" id="main-of-profile" >
+                                    <textarea class="textAreaOfProfile mx-auto" name="postDescription" id="" cols="30" rows="10" placeholder="Write Something ..."></textarea>
+                                    <ul class="sendItemsOfProfile d-flex justify-content-end mx-auto mt-1">
+                                        <li class="d-inline-block mr-2"> <label for="w15185"> <i class="ion-image ion-profile-img-js" style="color: #fff; cursor: pointer;"></i> <input type="file" name="postImage" id="w15185" class="inputForProfileSector" hidden> </label></li>
+                                        <li class="d-inline-block mr-2"><button type="submit" class="btnForProfilePublish my-auto">publish</button></li>
+                                    </ul>
+                                </main>
+                            
+
+                         </form>
+                         <%}%>
+
+                         <!-- start hbe ekhan theke -->
+                         <!-- <div class="container"> -->
+                         <%allPosts.reverse().forEach((post)=>{%>
+                           <% if(post.author._id==proFileUserId){%>
+                           
+                           
+
+                              
+
+
+                                <!-- xxxxxxxxxxxxxxxxx 1.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+                         <article class=" mt-2 mx-auto proFileShowCard" style="width: 99%; height: auto;">
+
+                            <!-- 1. -->
+                            <div style="width: 100%; height: 65px; display: flex; flex-direction: row;">
+                              
+                              
+                              <%if(post.author.profilePhoto==""){%>
+
+                                <img class="profileShowImgForIcon ml-2 my-auto" src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="" style="border:2px solid rgb(145, 144, 144);">
+                              
+                                <%}else{%>
+                                  
+                                  <img class="profileShowImgForIcon ml-2 my-auto" src="/upload/profile/<%=profileUserDetail._id%>/<%=profileUserDetail.profilePhoto%>"" alt="" style="border:2px solid rgb(145, 144, 144);">
+                                  <%}%>
+
+                                <h6 class="ml-3 my-auto forNameHeading" id="forNameHeading" ><%= post.author.name %></h6>
+                              <!-- for deleteing post -->
+
+                                <div class=" mt-4 ">
+                                  <% if(`"${currentUser._id}"`==`"${post.author._id}"`){ %> 
+                                    <div class="dropdown dropDown<%=post._id%>" >
+                                        <a style="display: inline-block; color: red;" type="button" class=" dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></a>                                            
+                                         <ul class="dropdown-menu dropdown-menu-right" >
+        
+                                              <!-- Delete button starting from here -->
+                                              <li><form style="display: inline-block;" action="/home/<%=post._id%>/delete/<%=post.image%>?_method=DELETE" method="POST">
+                                                    
+                                                    <button type="submit" class="commentDelete delete<%=post._id%>">Delete</button>
+                                                  </form>
+                                              </li>
+                                       </ul>
+                                   </div>
+                                    <% } %> 
+        
+        
+                                </div>
+                            </div>
+
+                            <!-- 2. -->
+                            <div class=" d-flex flex-column justify-content-center align-items-center" style="font-size: 70%;  ">
+                               
+                              <div class=" ml-2  mt-1 container " style=" width: 96%; border-left: 3px solid rgb(199, 199, 199); word-wrap: break-word;" >
+                                <%= post.postDescription %>
+                              </div>  
+    
+                            </div>
+                            <%if(post.image){%>
+                            <hr class="my-0 mt-2" >
+                            <%}%>
+
+                            <!-- 3. -->
+                            <%if(post.image){%>
+                            <img class="imgForProfileFeed mx-auto" style=" width: 95%;" src="/upload/<%=post.author._id%>/<%=post.image%>"></img>
+                            <%}%>
+                            <!-- 4. -->
+                            <!-- IMOPORTANT span a niche id er okhne post id hbe -->
+                            <span class="toGraveProfileUserId d-none"id="<%=post._id%>" ></span>
+                                
+                            <div class="profileLikeCommentDiv d-flex align-items-center" >
+                                    <div id="ForMedialikeCommentDiv">
+                                        <!-- for showing like comment dislike -->
+                                        <div class="container" >
+                                            <div class="row">
+                                              <div class="col" style="text-align: center; font-size: 58%; ">
+                                                <span class="likeText"><%=post.like.length%></span>  Like
+                                              </div>
+                                              <div class="col" style="text-align: center; font-size: 58%; ">
+                                                <span><%=post.comments.length %></span> comments
+                                              </div>
+                                              <div class="col" style="text-align: center; font-size: 58%; ">
+                                                <span class="disLikeText"><%=post.disLike.length%></span> dislike
+                                              </div>
+                                            </div>
+                                                <!-- </div> -->
+                                            <!-- <hr class="my-auto"> -->
+                                                <!-- to give like -->
+                                                <!-- <div class="container"> -->
+                                                    <div class="row">
+                                                        <a class="col d-block forHoverIconsClass divForLike" style=" text-align: center; ">
+                                                                            <!-- this is for like -->
+                                                            <% if(post.like.includes(currentUser._id)){ %>
+                                                            <i class="ion-thumbsup profileLikeIcon" style="color: rgb(15, 241, 11);"></i>
+                                                            <% }else{ %>
+                                                            <i class="ion-thumbsup profileLikeIcon" style="color: rgb(156, 155, 155);"></i>
+                                                            <%}%>
+                                                        </a>
+                                                        <a class="col d-block forHoverIconsClass commentIcon-div-js" style=" text-align: center;">
+                                                                            <!-- this for comment -->
+                                                            <i class="ion-ios-chatbubble profileCommentIcon"></i>
+                                                        </a>
+                                                        <a class="col d-block forHoverIconsClass divForDislike" style=" text-align: center;">
+                                                                            <!-- this for dislike -->
+                                                            <% if(post.disLike.includes(currentUser._id)){ %>
+                                                                 <i class="ion-thumbsdown profileDisLikeIcon" style="color: rgb(241, 11, 11);"></i>
+                                                            <% }else{ %>
+                                                                <i class="ion-thumbsdown profileDisLikeIcon" style="color: rgb(156, 155, 155);""></i>
+                                                            <%}%>
+                                                        </a>
+                                                    </div>
+                                        </div>
+
+                                    </div>
+                            
+                            </div>
+                            <!-- 5. -->
+                                <div class="commentBox d-flex flex-column " >
+
+                                        <div>
+                                        <form action="/home/comment/<%=post._id%>" method="post" class="commendDiv d-flex justify-content-around align-items-center">
+                                            <!-- Comment Post Here -->
+                                            <textarea type="text" name='comment' placeholder="Comment Here ......" cols="30" rows="10" class="commentInput" ></textarea>
+                                        
+                                            <!-- <a href="" class="commentSentBtn my-auto">
+                                            <i class="ion-ios-paperplane commentSentIcon "></i>
+                                            </a> -->
+                                            <button class="commentSentBtn" >
+                                            <i class="ion-ios-paperplane commentSentIcon "></i>
+                                            </button>
+                                        </form>
+                                            
+                                        </div>
+                                </div>
+
+                              <!-- 6. -->
+
+                            <div class="container commentDiv-js" style="display: none;">
+                                <!-- for loop start from Here -->
+                                <% post.comments.forEach(function(comment){ %>
+                                <article class="row " style="flex:none; margin-top: 20px; ">
+                                    <div class="commentShowDiv col-12" >
+                                        <!-- 6.1 user profile-image and user Name -->
+                                        <div class="commentUserProfileDiv d-flex justify-content-between" >
+                                            <div>
+                                                <!-- 6.1.1 this for profile picture name and photo-->
+                                                
+                                                <%if(comment.author.profilePhoto==""){%>
+                                                  <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="" class="commentUserLogo ">
+                                                  <%}else{%>
+                                                    
+                                                    <img src="/upload/profile/<%=comment.author._id%>/<%=comment.author.profilePhoto%>" alt="" class="commentUserLogo ">
+                                                    <%}%>
+                                                <strong style="font-size: 0.80rem;color: green; " class="forCommentMedia float-right ml-2 mt-1"><%=comment.author.name%> </strong>
+                                                <!-- edit button starting from here -->
+                                                 <!--  comment.author._id & activeUser._id template litarel er moddei likhe hbe nahol if condition false hobe-->
+                                            </div>
+                                            <!-- 6.1.2 delete and edit option start from here -->
+                                            <div>
+                                                <% if(`"${currentUser._id}"`==`"${comment.author._id}"`){ %>
+                                                <!-- start from here... if(activeUser._id==comment.author._id){   -->
+                                                  <div class="dropdown dropDown<%=comment._id%>" >
+                                                     <a style="display: inline-block; color: red;" type="button" class=" dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></a>                                            
+                                                      <ul class="dropdown-menu" >
+                                                          <li> <a class="commentEdit for-per-com-js" id="<%=comment._id%>" >Edit</a></li>
+        
+                                                          <!-- Delete button starting from here -->
+                                                          <li><form style="display: inline-block;" action="/home/comment/delete/<%=comment._id%>?_method=DELETE" method="POST">
+                                                                  <button type="submit" class="commentDelete delete<%=comment._id%>">Delete</button>
+                                                              </form>
+                                                         </li>
+                                                      </ul>
+                                                 </div>
+                                                 <% } %> 
+                                                  <!-- if  } end is here     -->
+                                           </div>
+
+                                        </div>
+                                        <!-- 6.2 this for show comments -->
+                                        <div style="margin-left: 30px;">
+    
+                                            <p  id="commentPara<%=comment._id%>"  style="font-size: 60%; width: 100%;  height: 30px;  overflow: auto; background-color: #f1f1f1;"><%= comment.text%></p>
+                                     
+                                        </div>
+                                        <!-- 6.3 when you click on edit btn then this div will be open -->
+
+                                        <div style="display: none;" id="editCommentPara<%=comment._id%>">      
+                                            <form   class="editFormComment d-flex justify-content-between " action="/home/comment/edit/<%=comment._id%>?_method=PUT" method="POST" >
+                                              <div class="inputEditComment" >
+      
+                                              <input type="text" name="editComment" class="ml-1" value="<%=comment.text%>" style="display: inline-block;width: 95%; height: 23px; border: 1px solid #f1f1f1;border-radius: 2px; background-color: #f1f1f1; outline: none; font-size: 80%; border-left: 2px solid red;padding-left: 4px;" >
+                                              </div>
+                                              <div>
+                                                <div class="dropdown">
+                                                      <a style="display: inline-block;" type="button" class=" dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></a>                                            
+                                                        <ul class="dropdown-menu" >
+                                                              <li> <button type="submit" class="updateCommentBtn dropdown-item" >Update</button></li>
+                                                              <li><a class="dropdown-item for-js-cancel cancelEditbtn cancle-<%=comment._id%>">Cancle</a></li>
+                                                        </ul>
+                                                </div>     
+                                              </div>
+                                            </form>
+                                        </div>
+
+
+                                    </div>
+                                </article>   
+                                <%})%>
+
+                            </div>
+
+
+                          </article>
+                      <!-- </div> -->
+
+     <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxendxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+
+
+
+
+
+
+
+                      <%}%>
+                      <%})%>
+
+                         
+                    </div>
+                </div>
+
+
+                </div>
+            </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<footer class="mt-3" style="width: 100%; height: 40px;">
+  <div style="padding:1px 2px 2px 1px;text-align: center; font-size: 78%; font-weight: 500; letter-spacing: .3px;">
+    Copyright &copy; 2020 by Wieaon.All rights reserved. Created by Wasim Akram Biswas
+
+  </div>
+</footer>
+<%- include('headfoot/footer.ejs') %>

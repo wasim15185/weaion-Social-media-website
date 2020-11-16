@@ -1,0 +1,724 @@
+@media only screen and (max-width: 600px) {
+	.inputEditComment {
+		width: 30%;
+	}
+	.main-nav {
+		width: 50%;
+	}
+	.forCommentMedia {
+		font-size: 0.60rem;
+	}
+	.frindsHeadingTextPart {
+		font-size: 70%;
+	}
+	.divTwoPart {
+		display: none;
+	}
+	#idForDivOnePart {
+		width: 100%;
+	}
+}
+
+/* forMediaFqListBtn */
+
+@media only screen and (max-width: 600px) {
+	#forMediaFqListBtn {
+		display: inline-block;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.commentInput {
+		margin-left: 6px;
+	}
+}
+
+
+/*for message-box*/
+
+@media only screen and (max-width: 1300px) {
+	.messageUserName {
+		font-size: 80%;
+	}
+	.msgPartOne {
+		width: 27%;
+	}
+	.msgPartTwo {
+		width: 65%;
+	}
+
+	#msgPartTwoBottomImg {
+		height: 92.8%;
+	}
+}
+@media only screen and (max-width: 1350px) {
+	#msgPartTwoBottomImg {
+		height: 92.8%;
+	}
+}
+
+@media only screen and (max-width: 1250px) {
+	#messageUserName {
+		font-size: 95%;
+	}
+	#msgPartOne,
+	#msgPartOne-For-MessageSend {
+		width: 30%;
+	}
+	#msgPartTwo,
+	#msgPartTwo-For-MessageSend {
+		width: 60%;
+	}
+}
+
+@media only screen and (max-width: 960px) {
+	#messageUserName {
+		font-size: 90%;
+	}
+	#msgPartOne,
+	#msgPartOne-For-MessageSend {
+		width: 37%;
+	}
+	#msgPartTwo,
+	#msgPartTwo-For-MessageSend {
+		width: 55%;
+	}
+}
+/*ai ta te hat e dibe na */
+@media only screen and (max-width: 750px) {
+	#messageUserName {
+		font-size: 90%;
+	}
+	#msgPartOne {
+		width: 85%;
+	}
+	#msgPartTwo {
+		display: none;
+	}
+
+	/*this for messageSend or /home/message/:id route*/
+
+	#msgPartOne-For-MessageSend {
+		display: none;
+	}
+	#msgPartTwo-For-MessageSend {
+		width: 90%;
+	}
+	#idForMessageInput {
+		width: 80%;
+	}
+}
+
+/*end media query of message-box*/
+
+
+/*START OF 'NAVBAR' RESPOSIVENESS*/
+/*for nav bar style*/
+
+@media only screen and (max-width: 1400px) {
+	.tNavItem-div {
+		width: 80%;
+		/* border: 1px solid red; */
+		display: flex;
+		/* margin-right: 20px; */
+	}
+}
+@media only screen and (max-width: 1000px) {
+	.tNavItem-div {
+		width: 70%;
+		/* border: 1px solid red; */
+		display: flex;
+		margin-right: 30px;
+	}
+}
+@media only screen and (max-width: 450px) {
+	/* .tNavItem-div {
+		width: 25%;
+		font-size: 80;
+		border: 1px solid red;
+		display: flex;
+		justify-content: space-around;
+	} */
+
+	.main-nav {
+		width: 75%;
+	}
+}
+
+/*ai ta te hat dibe na */
+@media only screen and (max-width: 1230px){
+	.main-nav{
+		width: 63%;
+	}
+	}
+
+/*END OF NAVBAR RESPOSIVENESS*/
+
+/*START of resposiveness of cover photo ,profile photo and profile menu*/
+
+@media only screen and (max-width: 1115px) {
+
+
+	#profilePic{
+
+		top: 58%;
+		left: 6%;
+		bottom: 2%;
+		height: 115px;
+		width: 115px;
+	}
+	#upparPartOfProfile{
+		grid-template-rows: .5fr .12fr ;
+	}
+
+	#menu-profile>ul{
+		flex-direction: column;
+		width: 50%;
+		/* width ta aste aste barabe */
+	}
+	#menu-profile>ul>li{
+		width: 100%;
+		margin-bottom: 3px;
+	}
+
+	
+
+	
+	
+}
+
+
+@media only screen and (max-width: 911px) {
+
+
+	#profilePic{
+
+		top: 53%;
+		left: 6%;
+		bottom: 2%;
+		height: 105px;
+		width: 105px;
+	}
+
+	#menu-profile>ul{
+		flex-direction: column;
+		width: 55%;
+		/* width ta aste aste barabe */
+	}
+	#menu-profile>ul>li{
+		width: 100%;
+	}
+	
+}
+
+
+@media only screen and (max-width: 785px) {
+
+
+	#profilePic{
+
+		top: 49%;
+		left: 6%;
+		bottom: 2%;
+		height: 100px;
+		width: 100px;
+	}
+
+	#menu-profile>ul{
+		flex-direction: column;
+		width: 60%;
+		/* width ta aste aste barabe */
+	}
+	#menu-profile>ul>li{
+		width: 100%;
+	}
+	
+}
+
+ @media only screen and (max-width: 681px) {
+
+
+	#profilePic{
+
+		top: 45%;
+		left: 6%;
+		bottom: 2%;
+		height: 95px;
+		width: 95px;
+	}
+
+	#menu-profile>ul{
+		flex-direction: column;
+		width: 65%;
+		/* width ta aste aste barabe */
+	}
+	#menu-profile>ul>li{
+		width: 100%;
+	}
+	
+}
+ @media only screen and (max-width: 591px) {
+
+
+	#profilePic{
+
+		top: 41%;
+		left: 6%;
+		bottom: 2%;
+		height: 90px;
+		width: 90px;
+	}
+
+	#menu-profile>ul{
+		flex-direction: column;
+		width: 100%;
+		/* width ta aste aste barabe */
+	}
+	#menu-profile>ul>li{
+		width: 100%;
+	}
+	
+}
+ @media only screen and (max-width: 509px) {
+
+
+	#profilePic{
+
+		top: 35%;
+		left: 6%;
+		bottom: 2%;
+		height: 85px;
+		width: 85px;
+	}
+
+	#menu-profile>ul{
+		flex-direction: column;
+		width: 100%;
+		/* width ta aste aste barabe */
+	}
+	#menu-profile>ul>li{
+		width: 100%;
+	}
+	
+}
+ @media only screen and (max-width: 480px) {
+
+
+	#profilePic{
+
+		top: 36%;
+		left: 40%;
+		bottom: 2%;
+		height: 80px;
+		width: 80px;
+	}
+
+	#menu-profile>ul{
+		flex-direction: column;
+		width: 100%;
+		/* width ta aste aste barabe */
+	}
+	#menu-profile>ul>li{
+		width: 100%;
+	}
+	
+}
+
+
+@media only screen and (max-width: 420px) {
+
+
+	#profilePic{
+
+		top: 31%;
+		left: 40%;
+		bottom: 2%;
+		height: 78px;
+		width: 78px;
+	}
+
+	#menu-profile>ul{
+		flex-direction: column;
+		width: 100%;
+		/* width ta aste aste barabe */
+	}
+	
+	
+}
+
+
+/*end of resposiveness of cover photo ,profile photo and profile menu*/
+
+
+/*profile from means upload sections */
+@media only screen and (max-width:536px){
+	
+	#formOfProfile{
+		justify-content: space-between;
+		
+	}
+}
+
+/*end of profile from section */
+
+
+
+
+@media only screen and (max-width:1200px){
+	
+	#main-of-profile {
+		width: 56%;
+	height: 52%;
+	font-size: 95%;
+		
+	}
+	#img-of-user-in-postbox{
+		width: 85px ; 
+		height: 85px; 
+	}
+}
+
+
+@media only screen and (max-width:991px){
+	
+	#main-of-profile {
+		width: 60%;
+	height: 45%;
+	font-size: 83%;
+		
+	}
+	#img-of-user-in-postbox{
+		width: 75px ; 
+		height: 75px; 
+	}
+}
+@media only screen and (max-width:417px){
+	
+	#main-of-profile {
+		width: 65%;
+	height: 40%;
+	font-size: 75%;
+		
+	}
+	#img-of-user-in-postbox{
+		width: 65px ; 
+		height: 65px; 
+	}
+}
+
+
+/*for profile like comment div*/
+
+@media only screen and (max-width:992px){
+	#ForMedialikeCommentDiv{
+		width: 100%;
+		/* border: 1px dashed rgb(255, 0, 0); */
+		height: 70%;
+		
+	}
+}
+
+
+
+/*for image frid*/
+
+
+@media only screen and (max-width:768px){
+	#customColForLeft{
+
+		height: 350px;
+	}
+	#allContainerImg{
+		grid-auto-rows:  84px;
+		grid-gap:.31em; 
+
+	}
+	#imgCardDiv{
+		/* margin-right: auto!important;
+		margin-left: auto!important;
+		width: 99%; */
+		height: 90%;
+
+		
+	}
+
+}
+
+
+/* for custom card */
+/* customCard */
+
+@media only screen and (max-width:1500px){
+
+	#customCard{
+		width:69%;
+	}
+	#uploadSection{
+		width:71.5%;
+	}
+
+	#profile-home-Ad{
+		width: 69%;
+	}
+	
+
+}
+@media only screen and (max-width:1400px){
+
+	#customCard{
+		width:75%;
+	}
+
+	#uploadSection{
+		width:78%;
+	}
+
+	#profile-home-Ad{
+		width: 75%;
+	}
+
+}
+/*ai ta hatke*/
+@media only screen and (max-width:1250px){
+
+	.right,.left{
+		display: none;
+	}
+
+	#section{
+		grid-template-columns:1fr
+		
+	}
+
+	#uploadSection{
+		width: 61.6%;
+	}
+
+	/* #profile-home-Ad{
+		width: 60%;
+	} */
+
+	#forNameHeading{
+		font-size: 85%;
+	}
+
+}
+/*--------------------*/
+/* @media only screen and (max-width:1249px){
+	
+} */
+
+
+
+@media only screen and (max-width:1250px){
+
+	#customCard{
+		width:60%;
+	}
+
+	#uploadSection-img-div{
+		width: 85px;
+	height: 85px;
+	}
+	#uploadSection-img-div>img{
+		width: 80px;
+		height: 80px;
+	}
+
+	#profile-home-Ad{
+		width: 60%;
+	}
+
+}
+
+@media only screen and (max-width:1150px){
+
+	#customCard{
+		width:65%;
+	}
+
+	#uploadSection{
+		width: 67%;
+		
+	}
+
+	#uploadSection-img-div{
+		width: 82px;
+	height: 82px;
+	}
+	#uploadSection-img-div>img{
+		width: 78px;
+		height: 78px;
+	}
+
+	#profile-home-Ad{
+		width: 65%;
+	}
+
+}
+@media only screen and (max-width:990px){
+
+	#customCard{
+		width:80%;
+	}
+
+	#uploadSection{
+		width: 84.5%;
+		
+	}
+
+	#uploadSection-img-div{
+		width: 78px;
+	height: 78px;
+	}
+	#uploadSection-img-div>img{
+		width: 72px;
+		height: 72px;
+	}
+
+	#profile-home-Ad{
+		width: 80%;
+	}
+
+	#forNameHeading{
+		font-size: 75%;
+		letter-spacing: .3px;
+	}
+
+}
+@media only screen and (max-width:580px){
+
+	#customCard{
+		width:90%;
+	}
+
+	#uploadSection{
+		width: 84.5%;
+		
+	}
+
+	#uploadSection-img-div{
+		width: 78px;
+	height: 78px;
+	}
+	#uploadSection-img-div>img{
+		width: 72px;
+		height: 72px;
+	}
+
+	#profile-home-Ad{
+		width: 90%;
+	}
+
+	#forNameHeading{
+		font-size: 60%;
+		letter-spacing: .4px;
+		
+	}
+
+}
+
+/* ai ta RRRRR ektu hatke */
+@media only screen and (max-width:580px){
+
+	#uploadSection{
+		width: 95.5%;
+		
+	}
+
+	#uploadSection-img-div{
+		width: 72px;
+	height: 72px;
+	}
+	#uploadSection-img-div>img{
+		width: 66px;
+		height: 66px;
+	}
+
+	#uploadSection-another-div{
+		height: 51%;
+		font-size: 68%;
+	}
+
+}
+
+/*-------------------*/
+@media only screen and (max-width:530px){
+
+	#customCard{
+		width:94%;
+	}
+
+	#uploadSection{
+		width: 100%;
+		height: 200px;
+		
+	}
+
+	#uploadSection-img-div{
+		width: 60px;
+	height: 60px;
+	}
+	#uploadSection-img-div>img{
+		width: 55px;
+		height: 55px;
+	}
+
+	#uploadSection-another-div{
+		height: 45%;
+		font-size: 68%
+	}
+
+	#profile-home-Ad{
+		width: 94%;
+		max-height: 70%;
+	}
+
+}
+
+/* this is for message-container */
+@media only screen and (max-width:577px){
+
+	#message-container{
+		max-width: 430px;
+	}
+
+}
+@media only screen and (max-width:450px){
+
+	#message-container{
+		max-width: 400px;
+	}
+
+}
+
+@media only screen and (max-width:425px){
+
+	#message-container{
+		max-width: 370px;
+	}
+
+}
+@media only screen and (max-width:400px){
+
+	#message-container{
+		max-width: 340px;
+	}
+
+}
+@media only screen and (max-width:372px){
+
+	#message-container{
+		max-width: 310px;
+	}
+
+}
+
+
+
+@media only screen and (max-width:700px){
+
+	.profile-Home-Ad-head>h5{
+		font-size: 80%;
+	}
+}

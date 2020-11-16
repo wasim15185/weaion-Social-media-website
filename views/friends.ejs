@@ -1,0 +1,113 @@
+<%- include('headfoot/header.ejs') %>
+<div class="d-flex justify-content-between flex-wrap" style="background-color: #f1f1f1 ">
+<aside class="divOnePart" id="idForDivOnePart">
+   <div class="frindLeftDivHeader">
+       <h6 class="text-center frindsHeadingTextPart">Suggestion</h6>
+       <hr class="customHr suggestionHr" >
+   </div> 
+
+   
+
+   <section class="suggestionShowingDiv d-flex flex-column">
+       <div class="mt-2 mr-2 mb-2 forMediaFqListBtn" id="forMediaFqListBtn">
+             <a href="/home/friends/friendsList" class="btn btn-warning float-right" style="font-size: 50%; color: #fff; font-weight: 600;">Goto Friends List</a>
+        </div>
+        <div class="container" style="height: 77vh; overflow:auto">
+           
+            <% allUser.forEach((user)=> {%>
+                <% if(`${user._id}` !==`${currentUser._id}`){%> 
+                   <%if(currentUser.friends.includes(user._id)){ %>
+            <div class="row mt-2">
+                <form action="/home/friends/<%=user._id%>/unfollow/<%=activeUser._id%>" class="customCardForSg col-sm-12 col-md-8 col-xxl-7 d-flex flex-column mx-auto " method="POST" >
+                    <div class="mt-2" >
+
+                    <%if(user.profilePhoto==""){%>
+                        <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="" class="FqSendUserImg">
+                            <%}else{%>
+                        <img src="/upload/profile/<%=user._id%>/<%=user.profilePhoto%>" alt="" class="FqSendUserImg">
+                    <%}%>
+                        
+                        <a href="/home/profile/<%=user._id%>" style="font-size: 65%; font-weight: 500;" class="ml-2"><%=user.name%></a>
+                    </div>
+                    <div style="width: 70%; height:25px ;" class="mt-3 d-flex justify-content-around">
+                        <button class="btnFq unfollowBtn" type="submit"> <i class="ion-close-round"></i> Unfollow</button>
+                      
+                    </div>
+                </form>
+            </div>
+                <%}else{%>
+            <div class="row mt-2">
+                <form action="/home/friends/<%=user._id%>/follow/<%=activeUser._id%>" class="customCardForSg col-sm-12 col-md-8 col-xxl-7 d-flex flex-column mx-auto " method="POST" >
+                    <div class="mt-2" >
+
+                        <%if(user.profilePhoto==""){%>
+                            <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="" class="FqSendUserImg">
+                                <%}else{%>
+                            <img src="/upload/profile/<%=user._id%>/<%=user.profilePhoto%>" alt="" class="FqSendUserImg">
+                        <%}%>
+
+                        <a href="/home/profile/<%=user._id%>" style="font-size: 65%; font-weight: 500;" class="ml-2"><%=user.name%></a>
+                    </div>
+                    <div style="width: 70%; height:25px ;" class="mt-3 d-flex justify-content-around">
+                        <button class="btnFq followBtn" type="submit">@ follow</button>
+                        <button class="btnFq fqHideBtn forJsHide">Hide</button>
+                    </div>
+                </form>
+            </div>
+                    <% }%>
+                <% }%>
+            <%})%>
+        </div>
+
+    </section>
+
+
+</aside>
+
+
+<aside class="divTwoPart">
+    
+    <div class="frindRightDivHeader">
+         <h6 class="text-center frindsHeadingTextPart">friends</h6>
+                <hr class="customHr friendHr" >
+
+    </div>
+
+    <section class="friendsShowingDiv">
+      <div class="container" style="height: 77vh; overflow:auto">
+
+           <% activeUser.friends.forEach((friend)=>{%>
+            <% if(`${friend._id}` !==`${currentUser._id}`){%>
+            <div class="row mt-2">
+                <form class="customCardForFq mx-auto col-10" action="/home/friends/<%=friend._id%>/unfollow/<%=currentUser._id%>" method="POST">
+                    <div class="mt-2 mr-0" style="width: 70%; height: 50px;">
+                    
+                        <%if(friend.profilePhoto==""){%>
+                            <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="" class="unFrdUserImg">
+                        <%}else{%>
+                                <img src="/upload/profile/<%=friend._id%>/<%=friend.profilePhoto%>" alt="" class="unFrdUserImg">
+                        <%}%>
+
+                        <a href="/home/profile/<%=friend._id%>" class="ml-2" style="font-size: 90%;"><%=friend.name%> </a>
+                    </div>
+
+                    <button class="btnForUnfrdinFrdList">
+                        Unfriend
+                    </button>
+
+
+                </form>
+
+            </div>
+          <%}%>
+        <%})%>
+      </div>
+
+    </section>
+
+
+</aside>
+</div>
+
+
+<%- include('headfoot/footer.ejs') %>

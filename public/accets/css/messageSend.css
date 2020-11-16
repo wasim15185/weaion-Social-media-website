@@ -1,0 +1,52 @@
+/*ekhane sob css ekhane nei segulo a6e friend.css*/
+/*karon ta tumi jano*/
+
+.msgSendPartTwoTop {
+	height: 15%;
+	/* border: 1px solid rgb(251, 255, 0); */
+	background-color: #2b2b2b;
+}
+
+.msgSendPartTwoBottom {
+	height: 85%;
+	/* border: 1px solid rgb(128, 0, 117); */
+}
+
+/* inside the 'msgSendPartTwoBottom' */
+
+.totalMsgShowpart {
+	/* border: 1px solid red; */
+	width: 100%;
+	height: 85%;
+}
+.heading-of-msgSendPartTwoTop {
+	font-size: 90%;
+}
+
+.writtenMsgSendPart {
+	width: 100%;
+	height: 12%;
+	/* border: 1px solid rgb(60, 255, 0); */
+	border-top: 1px solid #666666;
+}
+
+.messageInput {
+	width: 85%;
+	height: 60%;
+	background-color: #2b2b2b;
+	color: #fff;
+	font-size: 70%;
+	outline: none;
+	border: 1px solid #313131;
+}
+.messageSendBtn {
+	width: 40px;
+	height: 40px;
+	outline: none;
+	border-radius: 50%;
+	background-color: rgb(0, 255, 0);
+	border: none;
+	font-size: 95%;
+	color: #fff;
+}
+/* end inside of 'msgSendPartTwoBottom'  */

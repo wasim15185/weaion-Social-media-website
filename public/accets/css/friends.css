@@ -1,0 +1,135 @@
+.divOnePart,
+.divTwoPart {
+	height: 92vh;
+	width: 40%;
+	/* border: 1px solid red; */
+	
+	
+}
+
+/* friends left Div header part*/
+.frindsHeadingTextPart {
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-top: 5px;
+}
+
+.customHr {
+	border: none;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	height: 1px;
+	/*color and background-color   both property e lagbe*/
+	color: rgb(0, 0, 0);
+	background-color: rgb(0, 0, 0);
+	margin: auto;
+}
+
+.suggestionHr {
+	width: 25%;
+}
+.frindRightDivHeader,
+.frindLeftDivHeader {
+	background-color: #fff;
+	height: 70px;
+	border:2px solid #e7e7e7;
+}
+
+/* end friend ending part*/
+.friendsShowingDiv,
+.suggestionShowingDiv {
+	/* border: 1px dashed blue; */
+	margin-top: 15px;
+	height: 85%;
+	background-color: #fff;
+	border: 2px solid #e7e7e7;
+	
+}
+/* container for fqsend div */
+.containerforFq {
+	overflow: auto;
+}
+
+/*cards for fqsend */
+.customCardForFq,
+.customCardForSg {
+	opacity: 1;
+	border: 2px solid #ececec;
+	
+}
+.customCardForSg {
+	height: 120px;
+}
+
+.customCardForFqandOptacity {
+	opacity: 0;
+	transition: all .5s ease;
+}
+/*for image*/
+.FqSendUserImg {
+	height: 31px;
+	width: 31px;
+	border-radius: 50%;
+	border: 1px solid #e0e0e0
+}
+/*button for fq*/
+
+.btnFq {
+	display: inline-block;
+	width: 42%;
+	height: 115%;
+	border-radius: 3px;
+	font-size: 55%;
+	border: none;
+	outline: none;
+	font-weight: 600;
+}
+/*follow BTN*/
+.followBtn {
+	color: rgb(0, 0, 0);
+	background-color: rgb(65, 255, 7);
+}
+/*unfollow BTN*/
+.unfollowBtn {
+	width: 50%;
+	color: rgb(0, 0, 0);
+	background-color: rgb(248, 0, 215);
+}
+/*Hide BTN*/
+.fqHideBtn {
+	background-color: rgb(0, 0, 0);
+	color: #fff;
+}
+/*div part-2 start from here*/
+
+.divTwoPart {
+	width: 55%;
+}
+.friendHr {
+	width: 13%;
+}
+.customCardForFq {
+	height: 95px;
+}
+/*btn for unfriend*/
+.btnForUnfrd {
+	float: right;
+	font-size: 70%;
+	font-weight: 500;
+	border: none;
+	outline: none;
+	color: #fff;
+	background-color: rgb(255, 0, 0);
+	border-radius: 4px;
+}
+.unFrdUserImg {
+	height: 37px;
+	width: 37px;
+	border-radius: 50%;
+	border: 1px solid red;
+}
+
+/* for Media FqListBtn */
+.forMediaFqListBtn {
+	display: none;
+}

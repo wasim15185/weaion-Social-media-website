@@ -1,0 +1,420 @@
+<%- include('headfoot/header.ejs') %>
+<section class="section" id="section">
+
+<!-- left start   -->
+<div class="left">
+  <div class="mt-2 profile-Ad" style="height: 600px;">
+    <div class="profile-Ad-head">
+        <h5>sponcer</h5>
+        <hr size="3" class="my-0 mx-auto" style="width: 35%;background-color: rgb(26, 26, 26);">
+
+    </div>
+
+    <div class="profile-Ad-body mx-auto" style="width: 95%;">
+        <img src="https://image.freepik.com/free-vector/special-offer-big-sale-background_1361-2651.jpg" alt="" style="background-size: cover;background-repeat: no-repeat;background-position: center">
+
+    </div>
+
+</div>
+
+</div>
+
+
+      
+<div class="mid">
+
+
+
+    <div class="container" >
+            
+                    
+
+              <form action="/home" method="POST" class="mt-1 mx-auto uploadSection" id="uploadSection" enctype="multipart/form-data">
+
+                <!-- 1. image-->
+                <div class="uploadSection-img" id="uploadSection-img-div">
+                  <%if(currentUser.profilePhoto==""){%>
+                    <img src='https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png' alt="user-pic" >
+                    <%}else{%>
+                      <img src="upload/profile/<%=currentUser._id %>/<%=currentUser.profilePhoto%>" alt="" style="background-size: cover;background-repeat: no-repeat;background-position: center">
+                      <%}%>
+                </div>
+                <!-- 2.onther part -->
+                <div class="uploadSection-another-div" id="uploadSection-another-div">
+                    <textarea name="postDescription" placeholder="Write Something..." id="" cols="30" rows="2" style="width: 90%;height:50%;margin-top: 3px;margin-left: 3px; border: none; outline: none; font-size: 80%;"></textarea>
+                  <ul class="sendItemsOfProfile d-flex justify-content-end mx-auto">
+                    <li class="d-inline-block mr-2"> <label for="xyz"><i class="ion-image " style="color: rgb(78, 76, 76); cursor: pointer;"></i> </label> <input type="file" name="postImage" id="xyz" hidden></li>
+                    <li class="d-inline-block mr-2"><button type="submit" class="btnForProfilePublish my-auto">Upload</button></li>
+                  </ul>
+                </div>
+
+
+              </form>
+
+
+
+
+
+
+              <!-- For frind suggstion list -->
+
+            <div class="row mt-3 d-none d-xxl-block d-xxl-none">
+              <div class="col-10 mx-auto d-flex align-items-center flex-wrap forFqCardsDiv" >
+                <h6  style=" text-transform: uppercase;letter-spacing: .8px;font-weight: 600;font-size: 95%; width: 100%; text-align: center; margin-bottom: 0;">Suggestions </h6>
+                <hr size="3" class="my-0 mx-auto" style="width: 30%;background-color: rgb(26, 26, 26);">
+
+                <div class="forHideScrollBar"style="overflow-x: auto;height:180px; width:101%;">
+               
+                <div class="d-flex flex-row " >
+                  
+                  <% allUser.forEach((user)=>{%>
+                     <% if(`${user._id}` !==`${activeUser._id}`){%> 
+                        <%if(activeUser.friends.includes(user._id)){ %>
+                          
+                          <form action="/home/friends/<%=user._id%>/unfollow/<%=activeUser._id%>" method="POST" class=" col-3 ml-2  frindRequestCard " style="width: 20%; height: 160px;display: inline-block; margin-top: .2rem; ">
+
+                            <%if(user.profilePhoto==""){%>
+                              <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="" class="cardImg">
+                                  <%}else{%>
+                              
+                              <img src="/upload/profile/<%=user._id%>/<%=user.profilePhoto%>" alt="" class="cardImg ">
+                          <%}%>
+
+                            <a class="forJsFq mt-1" href="#" style="display: block;font-size: 50%; font-weight: bold; text-align: center;"><%=user.name%></a>
+                            <button class="unFollowBtn mt-1"type="submit"> <i class="ion-close-round"></i> Unfollow</button> 
+
+                          </form>
+                         <%}else{%><form action="/home/friends/<%=user._id%>/follow/<%=activeUser._id%>" method="POST" class=" col-3 ml-2  frindRequestCard " style="width: 20%;height: 160px;display: inline-block; margin-top: .2rem; ">
+                            <img src="https://media.gettyimages.com/photos/an-evening-near-howrah-bridge-picture-id641377236?s=2048x2048" alt="" class="cardImg ">
+                            <a class="forJsFq mt-1" href="#" style="display: block;font-size: 50%; font-weight: bold; text-align: center;"><%=user.name%></a>
+                            <button class="fqSendBtn mt-1"type="submit">@ follow</button> 
+
+                          </form>
+                          <%}%>
+
+                    <%}%>
+
+                          
+                  <% })%>
+                  
+                  
+
+                  </div>
+               </div>
+               
+
+              </div>
+
+
+
+            </div>
+
+            
+            <!-- spconce section -->
+              <div class="row">
+                <div class="mt-2 profile-home-Ad col-10 mx-auto" id="profile-home-Ad" >
+                
+                  <div class="profile-Home-Ad-head">
+                    <h5 class="home-title">Advertise</h5>
+                    <hr size="3" class="my-0 mx-auto" style="width: 35%;background-color: rgb(26, 26, 26);">
+
+                </div>
+
+                <div class="profile-home-Ad-body mx-auto" style="width: 95%;">
+                    <iframe class="profile-home-Ad-body-video" src="https://www.youtube.com/embed/HCDVN7DCzYE" style="cursor: pointer;"></iframe>
+
+                </div>
+                 
+                
+
+
+                </div>
+             </div>
+
+
+
+
+
+
+
+
+              
+              <!-- for loop start  -->
+
+            <% allPosts.reverse().forEach(function(post) { %>
+               <% activeUser.friends.forEach((friend)=> { %> 
+                <%if(`${post.author._id}`===`${friend}`){%>              
+              <div class="row" style="margin-top: 15px">
+
+                    <article class="customCard col-10 d-flex flex-column js-customCard" id="customCard">
+                      <div class="userSmallInfo d-flex justify-content-between mt-1 ">
+                        <%if(post.author.profilePhoto==""){%>
+                        <img src='https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png' alt="user-pic" >
+                        <%}else{%>
+                          <img src="upload/profile/<%=post.author._id %>/<%=post.author.profilePhoto%>" alt="" style="background-size: cover;background-repeat: no-repeat;background-position: center">
+                          <%}%>
+                        <div class="profileNameDiv  mt-1">
+                          <!-- Author Name is Here -->
+                          <h6 class=" profile-name ml-2 "><a href="/home/profile/<%=post.author._id%>"> <%= post.author.name %></a>  </h6>
+                          <!-- <strong class=" ml-2 "><a href="#"> <%= post.author.name %></a>  </strong> -->
+                        </div>
+                        <div class="mr-2 mt-1">
+                          <% if(`"${currentUser._id}"`==`"${post.author._id}"`){ %> 
+                            <div class="dropdown dropDown<%=post._id%>" >
+                                <a style="display: inline-block; color: red;" type="button" class=" dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></a>                                            
+                                 <ul class="dropdown-menu dropdown-menu-right" style=" font-size: 100%;">
+
+                                      <!-- Delete button starting from here -->
+                                          <%if(post.image){%>
+                                      <li><form style="display: inline-block;" action="home/<%=post._id%>/delete/<%=post.image%>?_method=DELETE" method="POST">
+                                          <%}else{%>
+                                       <li><form style="display: inline-block;" action="home/<%=post._id%>/delete?_method=DELETE" method="POST">
+                                          <%}%>
+                                            <button type="submit" class="commentDelete delete<%=post._id%>">Delete</button>
+                                          </form>
+                                      </li>
+
+
+
+
+
+
+                               </ul>
+                           </div>
+                            <% } %> 
+
+
+                        </div>
+                        
+
+                      </div>
+                      
+                      <div class=" d-flex flex-column justify-content-center align-items-center" style="font-size: 70%;  ">
+                               
+                        
+                        <div class=" ml-2  mt-1 message-container postDesDiv" id="message-container" >
+
+
+                          <%= post.postDescription %> 
+
+                        </div>  
+
+                      </div>
+                  
+                      
+
+                      <hr class=" my-0">
+                     
+                      
+                      <%if(post.image){%>
+                      <img src="upload/<%=post.author._id %>/<%=post.image%>" alt="image" class="img mx-auto ">
+
+                      <%}%>
+
+                      <hr class=" my-0">
+
+                        <div class="likeCommentViewDiv d-flex justify-content-around">
+                              <div class="showLike my-auto mx-3"><span id=<%=post._id%>> <%=post.like.length%> </span> likes</div>
+                              <div class="showComment my-auto mx-3"><span> <%=post.comments.length %> </span> comments</div>
+                              <div class="showDislike my-auto mx-3"><span> <%=post.disLike.length%> </span> dislike</div>
+                        
+                        </div>
+                       
+
+                      <div class="likeComment d-flex justify-content-around " >
+                      
+                              <!-- this is for like -->
+                            <% if(post.like.includes(activeUser._id)){ %>
+                            <a class="like my-auto d-block"> <i class="ion-thumbsup likeIcon " style="color: rgb(15, 241, 11);"></i></a>
+
+
+                            <% }else{ %>
+                            <a class="like my-auto d-block"> <i class="ion-thumbsup likeIcon " style="color: rgb(156, 155, 155);"></i></a>
+
+                            <%}%>
+                        
+                            <!-- this is comment -->
+
+                            <a class="comment my-auto d-block"> <i class="ion-ios-chatbubble commentIcon" style="color: rgb(156, 155, 155);"></i></a>
+
+
+                              <!-- this is dislike -->
+                            
+                            <% if(post.disLike.includes(activeUser._id)){ %>
+
+                            <a class="dislike my-auto d-block"> <i class="ion-thumbsdown dislikeIcon" style="color: rgb(241, 11, 11);"></i></a>
+
+
+                            <% }else{ %>
+
+                              <a class="dislike my-auto d-block"> <i class="ion-thumbsdown dislikeIcon" style="color: rgb(156, 155, 155);"></i></a>
+                              
+                            <%}%>
+
+
+                              
+
+                        
+                      </div>   
+                      
+                      <div class="commentBox d-flex flex-column ">
+
+                        <div>
+                          <form action="/home/comment/<%=post._id%>" method="post" class="commendDiv d-flex justify-content-around align-items-center">
+                            <!-- Comment Post Here -->
+                            <textarea type="text" name='comment' placeholder="Comment Here ......" cols="30" rows="10" class="commentInput" ></textarea>
+                           
+                            
+                            <button class="commentSentBtn" >
+                              <i class="ion-ios-paperplane commentSentIcon "></i>
+                            </button>
+                          </form>
+                            
+                        </div>
+                      </div>
+                        <!-- commment box list here -->
+
+                        
+                          
+                          <div class="forCommentJs forCommentContainer" style="display: none;">
+                            
+                        <% post.comments.forEach(function(comment){ %>
+                           <article class="row " style="flex:none; margin-top: 20px; ">
+                               <div class="commentShowDiv col-sm-12" >  
+                                  <div class="commentUserProfileDiv d-flex justify-content-between" >
+                                    <div>
+                                      <%if(comment.author.profilePhoto==""){%>
+                                        
+                                        <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="" class="commentUserLogo ">
+                                        <%}else{%>
+                                          
+                                          <img src="/upload/profile/<%=comment.author._id%>/<%=comment.author.profilePhoto%>" alt="" class="commentUserLogo ">
+                                      
+                                      <%}%>
+
+                                      <strong style="font-size: 0.80rem;color: green; " class="forCommentMedia float-right ml-2 mt-1"><%=comment.author.name%> </strong>
+                 
+                                    </div>
+
+                                   <!-- edit button starting from here -->
+                                  
+                                     <div>
+                                        <% if(`"${activeUser._id}"`==`"${comment.author._id}"`){ %> 
+                                          <div class="dropdown dropDown<%=comment._id%>" >
+                                              <a style="display: inline-block; color: red;" type="button" class=" dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></a>                                            
+                                               <ul class="dropdown-menu" >
+                                                   <li> <a class="commentEdit for-per-com-js" id="<%=comment._id%>" >Edit</a></li>
+
+                                                    <!-- Delete button starting from here -->
+                                                    <li><form style="display: inline-block;" action="home/comment/delete/<%=comment._id%>?_method=DELETE" method="POST">
+                                                          <button  class="commentDelete delete<%=comment._id%>">Delete</button>
+                                                        </form>
+                                                    </li>
+                                             </ul>
+                                         </div>
+                                          <% } %> 
+
+                                    </div>
+                                  </div>
+                                  <div style="margin-left: 30px;">
+
+                                    <p  id="commentPara<%=comment._id%>"  style="font-size: 60%; width: 100%;  height: 30px;  overflow: auto; background-color: #f1f1f1;"><%= comment.text %></p>
+                                  </div>
+
+                                  <!-- for editing comment div -->
+                                  <div style="display: none;" id="editCommentPara<%=comment._id%>">      
+                                      <form   class="editFormComment d-flex justify-content-between " action="/home/comment/edit/<%=comment._id%>?_method=PUT" method="POST" >
+                                        <div class="inputEditComment" >
+
+                                        <input type="text" name="editComment" class="ml-1" value="<%=comment.text%>" style="display: inline-block;width: 95%; height: 23px; border: 1px solid #f1f1f1;border-radius: 2px; background-color: #f1f1f1; outline: none; font-size: 80%; border-left: 2px solid red;padding-left: 4px;" >
+                                        </div>
+                                        <div>
+                                          <div class="dropdown">
+                                                <a style="display: inline-block;" type="button" class=" dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></a>                                            
+                                                  <ul class="dropdown-menu" >
+                                                        <li> <button type="submit" class="updateCommentBtn dropdown-item" >Update</button></li>
+                                                        <li><a class="dropdown-item for-js-cancel cancelEditbtn cancle-<%=comment._id%>">Cancle</a></li>
+                                                  </ul>
+                                          </div>     
+                                        </div>
+                                      </form>
+                                  </div>
+                              </div> 
+                          </article>
+                                  
+                              <% }) %> 
+                                                        
+
+                          </div>
+                          
+
+                    </article>
+
+
+
+                  </div>
+            <!-- for loop end  -->
+            <% } %> 
+              <% }) %> 
+            <% }) %>
+    
+           
+
+            
+  </div>
+
+
+
+</div>
+
+    
+    
+</div>
+
+<div class="preloader" id="preloader">
+  <div class=" spinner-border spinner-border-sm text-danger" role="status">
+    <span class="visually-hidden"></span>
+  </div>
+</div>
+
+<!-- right start from here -->
+<div class="right">
+
+  <div class="mt-2 profile-Ad" style="height:400px;">
+    <div class="profile-Ad-head">
+        <h5>Advertise</h5>
+        <hr size="3" class="my-0 mx-auto" style="width: 38%;background-color: rgb(26, 26, 26);">
+
+    </div>
+
+    <div class="profile-Ad-body mx-auto" style="width: 95%;">
+      <img src="https://image.freepik.com/free-vector/black-friday-sale-gift-yellow-background_1017-28718.jpg" alt="">
+    </div>
+
+</div>
+
+</div>
+
+
+
+</section>
+
+
+<footer  style="height: 50px; width: 100%; border-top: 2px solid #e7e7e7;">
+  
+    <p style="text-align: center; font-size: 78%;">
+        Copyright &copy; 2020 by Wieaon.All rights reserved. Created by Wasim Akram Biswas
+
+    </p>
+    
+
+
+</footer>
+
+
+
+
+
+
+<%- include('headfoot/footer.ejs') %>
+

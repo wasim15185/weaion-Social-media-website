@@ -1,0 +1,69 @@
+<%- include('headfoot/header.ejs') %>
+
+<section class="d-flex justify-content-center flex-wrap " >
+
+    <aside class="msgPartOne mt-1"  id="msgPartOne">
+        <div class="msgPartTop" >
+            <div class="d-flex justify-content-start mt-3 ml-2" >
+                <i class="ion-email"></i>
+                <strong class="msgPartTopHeading ml-2">All Message</strong>
+
+            </div>
+        </div>
+
+        <div class="msgPartBottom">
+            <div class="container" style="height: 78vh;">
+                <%for(i=0;i<activeUser.friends.length;i++){%>
+                    
+
+                    <%if(`${activeUser.friends[i]._id}`!==`${currentUser._id}` ){%>
+                        <div class="row">
+                            
+                            <a href="/home/message/<%=activeUser.friends[i]._id%>" class="messageCard" >
+                                <div class="mt-2">
+
+                                    <%if(activeUser.friends[i].profilePhoto==''){%>
+                                        
+                                        <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" alt="" class="messageUserpic">
+                                     <%}else{%>
+                                        
+                                        <img src="/upload/profile/<%=activeUser.friends[i]._id%>/<%=activeUser.friends[i].profilePhoto%>" alt="" class="messageUserpic">
+                                    <%}%>
+
+
+                                    <strong class="ml-1 messageUserName userName-js" id="messageUserName"><%=activeUser.friends[i].name%></strong>
+
+                                </div>
+                            </a>
+                        </div>
+
+                    <%}%>
+                <%}%>
+
+            </div>
+
+        </div>
+
+
+    </aside>
+
+
+    <aside class="msgPartTwo mt-1" id="msgPartTwo">
+        <div class="msgPartTwoTop">
+            
+        </div>
+        <div class="msgPartTwoBottom ">
+            <img class="msgPartTwoBottomImg" id="msgPartTwoBottomImg" src="/accets/img/message-image/msg-img-black.png" alt="">
+        </div>
+
+    </aside>
+
+
+</section>
+
+
+
+
+
+
+<%- include('headfoot/footer.ejs') %>

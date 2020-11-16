@@ -1,0 +1,206 @@
+/* icon color- #0ff10b; */
+html,
+body {
+	color: #555;
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	font-weight: 300;
+	text-rendering: optimizeLegibility;
+	overflow-x: hidden;
+}
+
+/*---------------clear float---------------*/
+.clearfix {
+	zoom: 1;
+}
+.clearfix:after {
+	content: '.';
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+/*-----------------------------------*/
+
+.forNav {
+	border-bottom: 1px solid rgb(216, 213, 213);
+}
+
+/*----------------------------------*/
+.navigation-row {
+	max-width: 1400px;
+	margin: 0 auto;
+	/* border: 1px solid cadetblue; */
+}
+.search-box {
+	/* border: 1px solid red; */
+	margin-right: -350px;
+	position: relative;
+	right: 150px;
+	top: 2px;
+	bottom: 1px;
+	border-radius: 40px;
+	width: 20%;
+	background-color: rgb(238, 237, 237);
+	height: 44px;
+	/* position: absolute; */
+}
+.input {
+	height: 25px;
+	width: 80%;
+	border: none;
+	outline: none;
+	background: none;
+	padding: 10px;
+	margin-top: 10px;
+	margin-left: 10px;
+	font-size: 80%;
+}
+.input::placeholder {
+	text-align: center;
+}
+.custom-btn {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	/* background-color: lawngreen; */
+	text-align: center;
+}
+
+/*-------------------------*/
+
+.main-nav {
+	/* float: right; */
+	/* border: 2px solid blue; */
+	width: 30%;
+
+	margin-top: 3px;
+	margin-bottom: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.main-nav li {
+	display: inline-block;
+	/* margin-left: 40px; */
+	flex-grow: 1;
+	text-align: center;
+
+	/* border: 1px dashed yellowgreen; */
+}
+
+.main-nav li:hover {
+	background-color: rgb(233, 232, 232);
+	border-radius: 5px;
+}
+/*---------for icon------------*/
+.ion-android-home {
+	font-size: 25px;
+	color: rgb(156, 155, 155);
+}
+
+.ion-chatbubble-working {
+	font-size: 25px;
+	color: rgb(156, 155, 155);
+}
+.ion-android-notifications {
+	font-size: 25px;
+	color: rgb(156, 155, 155);
+}
+.ion-person-stalker {
+	font-size: 25px;
+	color: rgb(156, 155, 155);
+}
+
+.icon-green {
+	color: #0ff10b;
+}
+/*------------icon-hover------------*/
+
+/*------------------------*/
+
+/* margin-left: 15px; */
+/* margin-top: 3px;
+	margin-bottom: 3px; */
+/* ai nicher property ta hotabe na  */
+/* .profile-nav {
+	border: 2px solid blue;
+	width: 20%;
+	list-style: none;
+	height: 85%;
+	
+	padding-inline-start: 0px;
+} */
+
+.ion-navicon-round {
+	font-size: 105%;
+	cursor: pointer;
+	color: rgb(0, 22, 219);
+}
+
+/* .btn-for-navbar {
+	width: 25%;
+	height: 62.5%;
+	border: 1px solid blueviolet;
+	font-size: 70%;
+} */
+
+#for-dropdown-toggle {
+	/* border-radius: 50%; */
+	font-size: 70%;
+	height: 90%;
+	outline: none;
+	border: none;
+	cursor: default;
+	/* border: 1px solid blueviolet; */
+	text-align: center;
+}
+
+.btn-check:focus + #for-dropdown-toggle,
+#for-dropdown-toggle:focus {
+	outline: 0;
+	box-shadow: none;
+}
+/* #for-dropdown-toggle::after {
+	margin-left: -0.19em;
+	vertical-align: 0.15em;
+	border-top: .3em solid;
+	border-right: .3em solid transparent;
+	border-bottom: 0;
+	border-left: .3em solid transparent;
+} */
+.dropdown-menu > li {
+	font-size: 80%;
+}
+
+.ion-power {
+	color: rgb(243, 8, 8);
+	font-size: 110%;
+	
+}
+/*-----logo---------*/
+
+.logo {
+	height: 45px;
+	width: auto;
+	margin-top: 3px;
+	margin-bottom: 2.5px;
+	border-radius: 50px;
+}
+
+header {
+	position: relative;
+}
+
+.tNavItem-div {
+	width: 65%;
+	/* border: 1px solid red; */
+	display: flex;
+	justify-content: space-between;
+}
+
+/* .dropDown-for-header > li {
+	font-size: 120%;
+} */
