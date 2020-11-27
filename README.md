@@ -10,7 +10,7 @@ https://weaion.herokuapp.com/
 So when u upload a photo for post or profile or Coverphoto in https://weaion.herokuapp.com/ . The Photo will be Save for temporary .And  
 after some couple of Hour. the photo autometically will be delete.
 
-**But if you clone or download the project and run your computer there will be on issue... it will work soomthly
+*But if you clone or download the project and run your computer there will be on issue... it will work soomthly
 
 # Technologies
 1.javascript
