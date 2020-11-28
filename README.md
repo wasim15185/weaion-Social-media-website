@@ -20,6 +20,8 @@ after some couple of Hour. the photo autometically will be delete.
 5.express.js
 6.node.js
 7.bootstrap 5
+8.jQuery
+9.Soket.io
 
 
 
